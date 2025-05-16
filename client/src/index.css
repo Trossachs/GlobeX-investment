@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Enhanced Black and Gold Theme */
+  --background: 0 0% 100%;
+  --foreground: 0 0% 10%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 45%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 10%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --primary: 0 0% 10%;  /* Black */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 45 93% 47%;  /* Gold */
+  --secondary-foreground: 0 0% 10%;
+  --accent: 45 93% 97%;  /* Light gold */
+  --accent-foreground: 0 0% 10%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 45 93% 47%;
+  --radius: 0.5rem;
+  
+  /* Chart colors */
+  --chart-1: 0 0% 10%;  /* Black */
+  --chart-2: 45 93% 47%;  /* Gold */
+  --chart-3: 45 70% 60%;  /* Lighter gold */
+  --chart-4: 0 0% 50%;  /* Gray */
+  --chart-5: 0 0% 30%;  /* Dark gray */
+  
+  /* Sidebar colors */
+  --sidebar-background: 0 0% 10%;  /* Black */
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 45 93% 47%;  /* Gold */
+  --sidebar-primary-foreground: 0 0% 10%;
+  --sidebar-accent: 0 0% 15%;  /* Dark gray */
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 0 0% 20%;
+  --sidebar-ring: 45 93% 47%;  /* Gold */
+}
+
+.dark {
+  --background: 0 0% 10%;  /* Black */
+  --foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 65%;
+  --popover: 0 0% 10%;  /* Black */
+  --popover-foreground: 0 0% 98%;
+  --card: 0 0% 10%;  /* Black */
+  --card-foreground: 0 0% 98%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --primary: 0 0% 98%;  /* White text for dark mode */
+  --primary-foreground: 0 0% 10%;
+  --secondary: 45 93% 47%;  /* Gold */
+  --secondary-foreground: 0 0% 10%;
+  --accent: 0 0% 15%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 45 93% 47%;  /* Gold */
+  
+  /* Chart colors */
+  --chart-1: 45 93% 47%;  /* Gold */
+  --chart-2: 45 70% 55%;  /* Lighter gold */
+  --chart-3: 0 0% 80%;    /* Light gray */
+  --chart-4: 0 0% 50%;    /* Gray */
+  --chart-5: 0 0% 30%;    /* Dark gray */
+  
+  /* Sidebar colors */
+  --sidebar-background: 0 0% 7%;   /* Very dark black */
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 45 93% 47%;   /* Gold */
+  --sidebar-primary-foreground: 0 0% 10%;
+  --sidebar-accent: 0 0% 15%;
+  --sidebar-accent-foreground: 0 0% 98%;
+  --sidebar-border: 0 0% 20%;
+  --sidebar-ring: 45 93% 47%;  /* Gold */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.ticker-scroll {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+}
+
+/* Page transitions */
+.page-transition {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Chart container */
+.chart-container {
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
